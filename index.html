@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            font-size: 10px;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Лаб. №2 Аппаратно-программные средства Web, Поладов Михаил ПИ21/1</h1>
+
+    <h2>
+        С помощью утилиты <i>telnet localhost 80</i> подключаемся к серверу localhost с помощью telnet соединения
+    </h2>
+    <img src="telnet_screens/1.png">
+
+    <h2>
+        Войдя в режим ввода команд telnet, вводим команду <i>GET /index.php HTTP/1.0</i>
+    </h2>
+    <img src="telnet_screens/2.png">
+
+    <h2>
+        Далее скопируем и вставим команду с набором заголовков для получения содержимого файла <i>index.php</i> <br>
+        GET /files/index.php HTTP/1.1 <br>
+        Host: u82813@kubsu-dev.ru
+    </h2>
+    <img src="telnet_screens/3.png">
+
+    <h2>
+        HEAD /files/file.tar.gz HTTP/1.1 <br>
+        Host: u82813@kubsu-dev.ru <br>
+        Connection: close
+    </h2>
+    <img src="telnet_screens/4.png">
+
+    <h2>
+        GET /files/image.png HTTP/1.1 <br>
+        Host: u82813@kubsu-dev.ru <br>
+        Connection: close
+    </h2>
+    <img src="telnet_screens/5.png">
+
+    <h2>
+        POST /files/index.php HTTP/1.1 <br>
+        Host: u82813@kubsu-dev.ru <br>
+        Content-Type: application/x-www-form-urlencoded <br>
+        Content-Length: 13 <br>
+        Connection: close <br> <br>
+        comment=helloworld
+    </h2>
+    <img src="telnet_screens/6.png">
+
+    <h2>
+        GET /files/file.tar.gz HTTP/1.1 <br>
+        Host: u82813@kubsu-dev.ru <br>
+        Range: bytes=0-99 <br>
+        Connection: close
+    </h2>
+    <img src="telnet_screens/7.png">
+
+
+</body>
+
+</html>

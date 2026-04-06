@@ -1,0 +1,28 @@
+telnet localhost 80
+
+GET /index.php HTTP/1.0
+
+GET /files/index.php HTTP/1.1
+Host: u82813@kubsu-dev.ru
+
+HEAD /files/file.tar.gz HTTP/1.1
+Host: u82813@kubsu-dev.ru
+Connection: close
+
+GET /files/image.png HTTP/1.1
+Host: u82813@kubsu-dev.ru
+Connection: close
+
+POST /files/index.php HTTP/1.1
+Host: u82813@kubsu-dev.ru
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 13
+Connection: close
+
+comment=helloworld
+
+
+GET /files/file.tar.gz HTTP/1.1
+Host: u82813@kubsu-dev.ru
+Range: bytes=0-99
+Connection: close
